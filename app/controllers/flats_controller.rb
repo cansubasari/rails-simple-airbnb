@@ -17,7 +17,7 @@ class FlatsController < ApplicationController
     if @flat.save
       redirect_to @flat
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -30,7 +30,7 @@ class FlatsController < ApplicationController
     if @flat.update(flat_params)
       redirect_to @flat
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
