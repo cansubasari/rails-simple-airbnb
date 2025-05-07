@@ -1,0 +1,14 @@
+<h1><strong>🏠Our Lovely Flats🏠</strong></h1>
+
+<ul class="list-group">
+  <% @flats.each do |flat| %>
+    <li class="list-group-item">
+      <h5>
+        <%= link_to flat.name, flat_path(flat), class: "text-dark" %>
+      </h5>
+      <p><i class="fa-solid fa-location-dot"></i> <%= flat.address %></p>
+      <p><i class="fa-solid fa-users"></i> Sleeps <%= flat.number_of_guests %> | 💷 £<%= flat.price_per_night %>/night</p>
+    </li>
+  <% end %>
+  <%= link_to "➕ Add New Flat", new_flat_path, class: "btn btn-success mb-3" %>
+</ul>

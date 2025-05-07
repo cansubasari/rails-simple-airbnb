@@ -1,0 +1,10 @@
+<h1 class="text-success"><%= @flat.name %></h1>
+
+<p><strong>Address:</strong> <%= @flat.address %></p>
+<p><strong>Description:</strong> <%= @flat.description %></p>
+<p><strong>Guests:</strong> <%= @flat.number_of_guests %></p>
+<p><strong>Price per night:</strong> £<%= @flat.price_per_night %></p>
+
+<%= link_to "✏️ Edit", edit_flat_path(@flat), class: "btn btn-outline-primary" %><br>
+<%= link_to "🗑 Delete", flat_path(@flat), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-outline-danger" %><br>
+<%= link_to "← Back to all flats", flats_path, class: "btn btn-outline-warning" %>
